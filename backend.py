@@ -2,7 +2,7 @@ import os
 import requests
 from rich.console import Console
 from rich.panel import Panel
-import ollama
+from groq import Groq
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -10,6 +10,7 @@ load_dotenv()
 
 console = Console()
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def fetch_github_data(username):
     # Add auth header if token is available
@@ -82,11 +83,11 @@ def generate_roast(data, intensity = "😈 Savage"):
     Keep it fun, not mean.
     """
 
-    response = ollama.chat(
-        model="llama3:latest",
-        messages=[{"role": "user", "content": prompt}]
+    response = client.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[{"role": "user", "content": prompt}]
     )
-    return response['message']['content']
+    return response.choices[0].message.content
 
 def main():
     console.print(Panel("🔥 GitHub Roaster 🔥", style="bold red"))
