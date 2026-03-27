@@ -17,11 +17,17 @@ def fetch_github_data(username):
     if GITHUB_TOKEN:
         headers["Authorization"] = f"token {GITHUB_TOKEN}"
     
-    # Fetch user profile and repositories
-    user = requests.get(f"https://api.github.com/users/{username}", headers=headers).json()
-    repos = requests.get(f"https://api.github.com/users/{username}/repos?per_page=100", headers=headers).json()
-    
-    return user, repos
+    try:
+        # Fetch user profile and repositories with timeout
+        user = requests.get(f"https://api.github.com/users/{username}", headers=headers, timeout=10).json()
+        repos = requests.get(f"https://api.github.com/users/{username}/repos?per_page=100", headers=headers, timeout=10).json()
+        return user, repos
+    except requests.exceptions.Timeout:
+        return {"message": "Connection timed out. Try again."}, []
+    except requests.exceptions.ConnectionError:
+        return {"message": "Cannot connect. Check internet."}, []
+    except Exception as e:
+        return {"message": f"Error: {str(e)}"}, []
 
 def process_data(user, repos):
     # Calculate repo statistics

@@ -1,5 +1,0 @@
-streamlit
-requests
-ollama
-python-dotenv
-rich
