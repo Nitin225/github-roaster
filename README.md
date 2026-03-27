@@ -6,17 +6,16 @@
 
 ## Overview
 
-GitHub Roaster fetches real data from any public GitHub profile and uses a locally running LLM to generate a humorous, fact-based roast. No paid APIs. No data leaves your machine.
+GitHub Roaster fetches real data from any public GitHub profile and uses LLaMA 3 70B via Groq API to generate a humorous, fact-based roast. Fast, free, and no local setup required.
 
 ---
 
 ## Features
 
 - **Real Data** — Pulls live stats from the GitHub API
-- **AI-Generated Roasts** — Powered by LLaMA 3 running locally via Ollama
+- **AI-Generated Roasts** — Powered by LLaMA 3 70B via Groq API
 - **Adjustable Intensity** — From Gentle to Brutal
 - **Developer Comparison** — Roast two developers head-to-head with a winner declaration
-- **Privacy First** — Fully local inference, no external AI API calls
 
 ---
 
@@ -25,7 +24,7 @@ GitHub Roaster fetches real data from any public GitHub profile and uses a local
 | Layer | Technology |
 |---|---|
 | Frontend | Streamlit |
-| AI Model | LLaMA 3 8B via Ollama |
+| AI Model | LLaMA 3 70B via Groq API |
 | Data Source | GitHub REST API |
 | Language | Python 3.10+ |
 
@@ -35,14 +34,14 @@ GitHub Roaster fetches real data from any public GitHub profile and uses a local
 
 ### Prerequisites
 - Python 3.10+
-- [Ollama](https://ollama.com) installed and running
 - GitHub Personal Access Token (optional but recommended)
+- Groq API Key — free at [console.groq.com](https://console.groq.com)
 
 ### Installation
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/github-roaster
+git clone https://github.com/Nitin225/github-roaster
 cd github-roaster
 ```
 
@@ -56,14 +55,10 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory:
 ```
 GITHUB_TOKEN=your_github_personal_access_token
+GROQ_API_KEY=your_groq_api_key
 ```
 
-**4. Pull the LLaMA 3 model**
-```bash
-ollama pull llama3
-```
-
-**5. Run the application**
+**4. Run the application**
 ```bash
 streamlit run app.py
 ```
@@ -76,7 +71,7 @@ The app will open automatically at `http://localhost:8501`
 ```
 github-roaster/
 ├── app.py          # Streamlit UI
-├── backend.py      # GitHub API + Ollama integration
+├── backend.py      # GitHub API + Groq integration
 ├── .env            # Environment variables (not committed)
 ├── .gitignore      # Ignores .env and cache files
 ├── requirements.txt
@@ -98,7 +93,7 @@ github-roaster/
 ```
 streamlit
 requests
-ollama
+groq
 python-dotenv
 rich
 ```
