@@ -1,4 +1,4 @@
-# 🔥 GitHub Roaster
+# GitHub Roaster
 
 > An AI-powered tool that analyzes any GitHub profile and generates a savage, witty roast based on real stats.
 
