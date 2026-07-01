@@ -1,251 +1,104 @@
-# GitHub Roaster 🔥
+# GitHub Roaster
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red)
+![Streamlit](https://img.shields.io/badge/Streamlit-Live-red)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-🚀 **Live Demo:** https://git-roast.streamlit.app/
+**Live Demo:** https://git-roast.streamlit.app/
 
-An AI-powered application that analyzes GitHub profiles and generates witty, context-aware roasts using real-time GitHub statistics and LLaMA 3.
-
----
-
-## ✨ Features
-
-- 🤖 AI-powered GitHub profile roasting using **LLaMA 3 (Groq API)**
-- 📊 Real-time GitHub profile analysis
-- ⭐ Repository, Stars & Followers insights
-- 🔥 Adjustable roast intensity (Gentle → Brutal)
-- ⚔️ Developer vs Developer comparison
-- 🖥️ FastAPI REST API backend
-- 🌐 React frontend
-- 🎈 Streamlit prototype (Live Deployment)
-- ⚡ Fast response using Groq inference
-- 🔒 Environment variable support for API keys
+GitHub Roaster is an AI-powered application that analyzes a GitHub profile and generates a humorous roast using GitHub profile data and LLaMA 3.
 
 ---
 
-## 🛠 Tech Stack
+## Features
 
-| Layer | Technology |
-|--------|------------|
-| Frontend | React.js |
+- Analyze any public GitHub profile
+- Generate AI-powered roasts using LLaMA 3 (Groq)
+- Fetch profile information using the GitHub REST API
+- Streamlit-based user interface
+- FastAPI backend
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|----------|------------|
 | Backend | FastAPI |
-| Prototype UI | Streamlit |
+| Frontend | Streamlit |
 | AI Model | LLaMA 3 (Groq API) |
-| Data Source | GitHub REST API |
-| Languages | Python, JavaScript |
+| API | GitHub REST API |
+| Language | Python |
 
 ---
 
-# 🏗 Architecture
-
-```text
-               React Frontend
-                     │
-                     ▼
-              FastAPI Backend
-                     │
-        ┌────────────┴────────────┐
-        ▼                         ▼
- GitHub REST API             Groq API
-                              (LLaMA 3)
-                     │
-                     ▼
-             AI Generated Roast
-```
-
----
-
-# 📂 Project Structure
+## Project Structure
 
 ```text
 github-roaster/
-│
 ├── backend/
-│   └── main.py
-│
-├── frontend/
-│
 ├── streamlit-version/
-│   ├── app.py
-│   └── backend.py
-│
+├── frontend/
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
 ---
 
-# 🚀 Live Demo
-
-### 🌍 Try it here
-
-https://git-roast.streamlit.app/
-
----
-
-# 📸 Screenshots
-
-> Add screenshots here after deployment.
-
-### Home Page
-
-```
-images/home.png
-```
-
-### Roast Result
-
-```
-images/result.png
-```
-
----
-
-# ⚙ Installation
-
-## Clone Repository
+## Installation
 
 ```bash
 git clone https://github.com/Nitin225/github-roaster.git
+
 cd github-roaster
 ```
 
----
-
-## Backend
+Install dependencies
 
 ```bash
-cd backend
-
-pip install -r ../requirements.txt
-
-uvicorn main:app --reload
+pip install -r requirements.txt
 ```
 
-Runs on
-
-```
-http://localhost:8000
-```
-
----
-
-## React Frontend
-
-```bash
-cd frontend
-
-npm install
-
-npm start
-```
-
-Runs on
-
-```
-http://localhost:3000
-```
-
----
-
-## Streamlit Version
+Run the Streamlit app
 
 ```bash
 cd streamlit-version
-
-pip install -r ../requirements.txt
-
 streamlit run app.py
 ```
 
-Runs on
+Run the FastAPI backend
 
-```
-http://localhost:8501
+```bash
+cd backend
+uvicorn main:app --reload
 ```
 
 ---
 
-# 🔑 Environment Variables
+## Environment Variables
 
-Create a `.env` file.
+Create a `.env` file:
 
-```
+```env
 GROQ_API_KEY=your_groq_api_key
 GITHUB_TOKEN=your_github_token
 ```
 
 ---
 
-# 📡 API Endpoints
+## Live Demo
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | /roast | Roast a GitHub profile |
-| POST | /compare | Compare two GitHub profiles |
-| GET | /docs | FastAPI Swagger Documentation |
+https://git-roast.streamlit.app/
 
 ---
 
-# 💻 Usage
+## Disclaimer
 
-1. Open the application.
-2. Enter a GitHub username.
-3. Select roast intensity.
-4. Generate an AI roast.
-5. Compare developers.
+This project is intended for entertainment purposes only. The generated roasts are AI-generated.
 
 ---
 
-# 🎯 Future Improvements
-
-- GitHub profile score
-- Roast history
-- Share roast on X/LinkedIn
-- Dark mode
-- Download roast as image
-- Multi-language support
-- Leaderboard
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-Fork the repository and submit a Pull Request.
-
----
-
-# ⚠ Disclaimer
-
-This project is intended purely for entertainment purposes.
-
-All outputs are AI-generated and should not be taken personally.
-
----
-
-# 📄 License
+## License
 
 MIT License
-
----
-
-# 👨‍💻 Author
-
-**Nitin Kumar**
-
-GitHub
-
-https://github.com/Nitin225
-
-LinkedIn
-
-(Add your LinkedIn profile here)
-
-⭐ If you like this project, don't forget to star the repository!
