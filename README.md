@@ -1,133 +1,251 @@
 # GitHub Roaster 🔥
 
-An AI-powered full-stack application that analyzes GitHub profiles and generates witty, data-driven roasts using real-time statistics.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+🚀 **Live Demo:** https://git-roast.streamlit.app/
+
+An AI-powered application that analyzes GitHub profiles and generates witty, context-aware roasts using real-time GitHub statistics and LLaMA 3.
 
 ---
 
-## Overview
+## ✨ Features
 
-GitHub Roaster combines GitHub’s public API with large language models to create humorous, context-aware roasts of developer profiles.
-The project includes both a modern web interface and a lightweight prototype version.
-
----
-
-## Features
-
-* Real-time GitHub data analysis (repositories, stars, followers)
-* AI-generated roasts using LLaMA 3 (via Groq API)
-* Adjustable roast intensity (Gentle to Brutal)
-* Developer comparison with scoring and winner selection
-* Dual interface: React web app and Streamlit prototype
+- 🤖 AI-powered GitHub profile roasting using **LLaMA 3 (Groq API)**
+- 📊 Real-time GitHub profile analysis
+- ⭐ Repository, Stars & Followers insights
+- 🔥 Adjustable roast intensity (Gentle → Brutal)
+- ⚔️ Developer vs Developer comparison
+- 🖥️ FastAPI REST API backend
+- 🌐 React frontend
+- 🎈 Streamlit prototype (Live Deployment)
+- ⚡ Fast response using Groq inference
+- 🔒 Environment variable support for API keys
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
-| Layer        | Technology         |
-| ------------ | ------------------ |
-| Frontend     | React.js           |
-| Backend      | FastAPI            |
-| Prototype UI | Streamlit          |
-| AI Model     | LLaMA 3 (Groq API) |
-| Data Source  | GitHub REST API    |
-| Languages    | Python, JavaScript |
+| Layer | Technology |
+|--------|------------|
+| Frontend | React.js |
+| Backend | FastAPI |
+| Prototype UI | Streamlit |
+| AI Model | LLaMA 3 (Groq API) |
+| Data Source | GitHub REST API |
+| Languages | Python, JavaScript |
 
 ---
 
-## Project Structure
+# 🏗 Architecture
 
-```bash
-github-roaster/
-├── backend/             # FastAPI backend
-├── frontend/            # React application
-├── streamlit-version/   # Streamlit prototype
-├── requirements.txt
-├── package.json
-└── README.md
+```text
+               React Frontend
+                     │
+                     ▼
+              FastAPI Backend
+                     │
+        ┌────────────┴────────────┐
+        ▼                         ▼
+ GitHub REST API             Groq API
+                              (LLaMA 3)
+                     │
+                     ▼
+             AI Generated Roast
 ```
 
 ---
 
-## Setup Instructions
+# 📂 Project Structure
 
-### 1. Clone Repository
+```text
+github-roaster/
+│
+├── backend/
+│   └── main.py
+│
+├── frontend/
+│
+├── streamlit-version/
+│   ├── app.py
+│   └── backend.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+# 🚀 Live Demo
+
+### 🌍 Try it here
+
+https://git-roast.streamlit.app/
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots here after deployment.
+
+### Home Page
+
+```
+images/home.png
+```
+
+### Roast Result
+
+```
+images/result.png
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/github-roaster
+git clone https://github.com/Nitin225/github-roaster.git
 cd github-roaster
 ```
 
 ---
 
-### 2. Backend Setup
+## Backend
 
 ```bash
 cd backend
-pip install -r requirements.txt
+
+pip install -r ../requirements.txt
+
 uvicorn main:app --reload
 ```
 
-Backend runs on: `http://localhost:8000`
+Runs on
+
+```
+http://localhost:8000
+```
 
 ---
 
-### 3. Frontend Setup
+## React Frontend
 
 ```bash
 cd frontend
+
 npm install
+
 npm start
 ```
 
-Frontend runs on: `http://localhost:3000`
+Runs on
+
+```
+http://localhost:3000
+```
 
 ---
 
-### 4. Streamlit (Optional)
+## Streamlit Version
 
 ```bash
 cd streamlit-version
-pip install -r requirements.txt
+
+pip install -r ../requirements.txt
+
 streamlit run app.py
+```
+
+Runs on
+
+```
+http://localhost:8501
 ```
 
 ---
 
-## Environment Variables
+# 🔑 Environment Variables
 
-Create a `.env` file in the root or backend directory:
+Create a `.env` file.
 
 ```
-GROQ_API_KEY=your_api_key
+GROQ_API_KEY=your_groq_api_key
 GITHUB_TOKEN=your_github_token
 ```
 
 ---
 
-## API Endpoints
+# 📡 API Endpoints
 
-* `POST /roast` — Generate roast for a single user
-* `POST /compare` — Compare and roast two users
-* `GET /docs` — Interactive API documentation
-
----
-
-## Usage
-
-1. Open the React app in the browser
-2. Enter a GitHub username
-3. Select roast intensity
-4. Generate a roast or compare developers
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | /roast | Roast a GitHub profile |
+| POST | /compare | Compare two GitHub profiles |
+| GET | /docs | FastAPI Swagger Documentation |
 
 ---
 
-## Disclaimer
+# 💻 Usage
 
-This project is intended for entertainment purposes only.
-All outputs are AI-generated and not meant to offend.
+1. Open the application.
+2. Enter a GitHub username.
+3. Select roast intensity.
+4. Generate an AI roast.
+5. Compare developers.
 
 ---
 
-## License
+# 🎯 Future Improvements
+
+- GitHub profile score
+- Roast history
+- Share roast on X/LinkedIn
+- Dark mode
+- Download roast as image
+- Multi-language support
+- Leaderboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Fork the repository and submit a Pull Request.
+
+---
+
+# ⚠ Disclaimer
+
+This project is intended purely for entertainment purposes.
+
+All outputs are AI-generated and should not be taken personally.
+
+---
+
+# 📄 License
 
 MIT License
+
+---
+
+# 👨‍💻 Author
+
+**Nitin Kumar**
+
+GitHub
+
+https://github.com/Nitin225
+
+LinkedIn
+
+(Add your LinkedIn profile here)
+
+⭐ If you like this project, don't forget to star the repository!
