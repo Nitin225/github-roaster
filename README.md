@@ -1,112 +1,133 @@
-# GitHub Roaster
+# GitHub Roaster 🔥
 
-> An AI-powered tool that analyzes any GitHub profile and generates a savage, witty roast based on real stats.
+An AI-powered full-stack application that analyzes GitHub profiles and generates witty, data-driven roasts using real-time statistics.
 
 ---
 
 ## Overview
 
-GitHub Roaster fetches real data from any public GitHub profile and uses LLaMA 3 70B via Groq API to generate a humorous, fact-based roast. Fast, free, and no local setup required.
+GitHub Roaster combines GitHub’s public API with large language models to create humorous, context-aware roasts of developer profiles.
+The project includes both a modern web interface and a lightweight prototype version.
 
 ---
 
 ## Features
 
-- **Real Data** — Pulls live stats from the GitHub API
-- **AI-Generated Roasts** — Powered by LLaMA 3 70B via Groq API
-- **Adjustable Intensity** — From Gentle to Brutal
-- **Developer Comparison** — Roast two developers head-to-head with a winner declaration
+* Real-time GitHub data analysis (repositories, stars, followers)
+* AI-generated roasts using LLaMA 3 (via Groq API)
+* Adjustable roast intensity (Gentle to Brutal)
+* Developer comparison with scoring and winner selection
+* Dual interface: React web app and Streamlit prototype
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | Streamlit |
-| AI Model | LLaMA 3 70B via Groq API |
-| Data Source | GitHub REST API |
-| Language | Python 3.10+ |
-
----
-
-## Getting Started
-
-### Prerequisites
-- Python 3.10+
-- GitHub Personal Access Token (optional but recommended)
-- Groq API Key — free at [console.groq.com](https://console.groq.com)
-
-### Installation
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/Nitin225/github-roaster
-cd github-roaster
-```
-
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**3. Configure environment variables**
-
-Create a `.env` file in the root directory:
-```
-GITHUB_TOKEN=your_github_personal_access_token
-GROQ_API_KEY=your_groq_api_key
-```
-
-**4. Run the application**
-```bash
-streamlit run app.py
-```
-
-The app will open automatically at `http://localhost:8501`
+| Layer        | Technology         |
+| ------------ | ------------------ |
+| Frontend     | React.js           |
+| Backend      | FastAPI            |
+| Prototype UI | Streamlit          |
+| AI Model     | LLaMA 3 (Groq API) |
+| Data Source  | GitHub REST API    |
+| Languages    | Python, JavaScript |
 
 ---
 
 ## Project Structure
-```
+
+```bash
 github-roaster/
-├── app.py          # Streamlit UI
-├── backend.py      # GitHub API + Groq integration
-├── .env            # Environment variables (not committed)
-├── .gitignore      # Ignores .env and cache files
+├── backend/             # FastAPI backend
+├── frontend/            # React application
+├── streamlit-version/   # Streamlit prototype
 ├── requirements.txt
+├── package.json
 └── README.md
 ```
 
 ---
 
-## Usage
+## Setup Instructions
 
-1. Select roast intensity using the slider
-2. Choose **Single Roast** or **Compare Developers** mode
-3. Enter a GitHub username and click **Roast**
-4. Watch the AI tear them apart — respectfully 😄
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/your-username/github-roaster
+cd github-roaster
+```
 
 ---
 
-## Requirements
+### 2. Backend Setup
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
 ```
-streamlit
-requests
-groq
-python-dotenv
-rich
+
+Backend runs on: `http://localhost:8000`
+
+---
+
+### 3. Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
 ```
+
+Frontend runs on: `http://localhost:3000`
+
+---
+
+### 4. Streamlit (Optional)
+
+```bash
+cd streamlit-version
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the root or backend directory:
+
+```
+GROQ_API_KEY=your_api_key
+GITHUB_TOKEN=your_github_token
+```
+
+---
+
+## API Endpoints
+
+* `POST /roast` — Generate roast for a single user
+* `POST /compare` — Compare and roast two users
+* `GET /docs` — Interactive API documentation
+
+---
+
+## Usage
+
+1. Open the React app in the browser
+2. Enter a GitHub username
+3. Select roast intensity
+4. Generate a roast or compare developers
 
 ---
 
 ## Disclaimer
 
-All roasts are AI-generated and intended purely for entertainment.
-No developers were harmed in the making of this project.
+This project is intended for entertainment purposes only.
+All outputs are AI-generated and not meant to offend.
 
 ---
 
 ## License
 
-MIT License — feel free to use, modify, and share.
+MIT License
